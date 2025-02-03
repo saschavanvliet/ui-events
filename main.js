@@ -25,11 +25,55 @@ interaction.addEventListener('animationend', jumpHandler)
 // Ga zelf verder met de overige elementen, aan de hand van de instructies
 // Maak bijvoorbeeld een bibber animatie als je op iets klikt
 
+
+
+//Nummer 1!
 // Stap 1: querySelector
 // let bibberLink = document.querySelector...
+let frontend = document.querySelector('a:nth-of-type(1)')
 
 // Stap 2: addEventListener
 // bibberLink.addEventListener...
+frontend.addEventListener('click', rotate)
 
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 // bibberLink.classList.toggle...
+function rotate () {
+  frontend.classList.toggle('rotate')
+}
+
+// button 2
+let design = document.querySelector('a:nth-of-type(2)')
+design.addEventListener('click', scale)
+function scale(){
+  design.classList.toggle('scale')
+}
+
+// // button 3
+// let and = document.querySelector('a:nth-of-type(3)')
+// and.addEventListener('click', scale)
+// function scale(){
+//   and.classList.toggle('scale')
+// }
+
+// button 4
+let development = document.querySelector('a:nth-of-type(4)')
+development.addEventListener('mousemove', omdraaienouleh)
+function omdraaienouleh(){
+  development.classList.toggle('turnaround')
+}
+
+// button 5
+let sprint5 = document.querySelector('a:nth-of-type(5)')
+sprint5.addEventListener('mousemove', weg)
+function weg(){
+  sprint5.classList.toggle('gone')
+  console.log(sprint5)
+}
+
+// button 6
+let fix = document.querySelector('a:nth-of-type(6)')
+fix.addEventListener('mousemove', colorchange)
+function colorchange(){
+  fix.classList.toggle('clown')
+}

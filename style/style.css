@@ -1,0 +1,265 @@
+/* Basic style */
+:root {
+  --primary: #fff;
+  --secondary: #050840;
+  --highlight-primary: #7ce7c9;
+  --highlight-secondary: #9d7beb;
+  --radius: 0.5rem;
+  --pill: 2rem;
+  --line: 0.1rem;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 2rem;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  background: var(--secondary);
+}
+section {
+  max-width: 90vw;
+}
+a {
+  display: inline-block;
+  margin: 0.2em;
+  padding: 0.4em 0.8em;
+  background: var(--secondary);
+  color: var(--highlight-primary);
+  border: var(--line) solid var(--highlight-primary);
+  border-radius: var(--pill);
+  font-weight: normal;
+  text-decoration: none;
+  vertical-align: top;
+}
+a:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* UI Event Classes */
+
+/* Jump animation on the interaction link */
+a:nth-of-type(12) {
+  position: relative;
+  background: var(--highlight-secondary);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.jump {
+  animation-name: jump;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-duration: 1.2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes jump {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-5rem) rotate(10deg);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-0.5rem) rotate(-2deg);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+/* Jouw animaties */
+a:nth-of-type(1) {
+  background-color: pink;
+} 
+a:nth-of-type(1).color {
+  background-color: brown;
+}
+ a:nth-of-type(2) {
+  display: inline-flex;
+  align-items: center;
+  background-color: greenyellow;
+  transition: 1s .1s ease;
+} 
+a:nth-of-type(2).groter {
+  padding: .4em 5em .4em 5em;
+  border-radius: 2em;
+  height: 10em;
+}
+
+a:nth-of-type(3).turnaround {
+  transform: rotate(360deg);
+  transition: 1s;
+}
+
+.popupding { 
+  display: none; /*eerst is de popup niet te zien*/
+  position: fixed;
+  color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid gray;
+  background-color: pink;
+  padding: 12rem;
+  margin: 1rem;
+  transition: 0.3s;
+  max-width: 18em;
+  visibility: visible;
+  z-index: 999; /*de popup staat nu voor de andere elementen*/
+  border-radius: 2%;
+}
+
+.showpopupding { /*nu is de popup wel te zien*/
+  display: block;
+}
+
+a:nth-of-type(5).gone {
+  transform: translateX(10em)
+}
+
+a:nth-of-type(6) {
+  background-color: var(--highlight-primary);
+  color: var(--secondary);
+}
+
+@keyframes disco {
+  0% {
+      background-color: pink;
+  }
+  25% {
+      background-color: rgb(244, 78, 78);
+  }
+  50% {
+      background-color: rgb(42, 145, 10);
+  }
+  75% {
+      background-color: rgb(12, 75, 202);
+  }
+  100% {
+      background-color: pink;
+  }
+}
+
+a:nth-of-type(6).clown {
+  animation: disco 0.5s infinite alternate;
+  transition: background-color 0.5s ease-out;
+}
+
+a:nth-of-type(7).square {
+  cursor: grab;
+  color: pink;
+    animation-name: square;
+    animation-duration: 2s;
+  }
+  
+  @keyframes square{
+    50%{
+      border-radius: 8px; 
+    }
+    0%{
+      background-color:rgb(244, 78, 78)
+    }
+    50%{
+      background-color: aliceblue;
+    }
+  } 
+
+.nobigmama {
+  display: none; /*eerst is de popup niet te zien*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--secondary);
+  color: var(--highlight-primary);
+  border: var(--line) solid var(--highlight-primary);
+  border-radius: 12%;
+  padding: 12rem;
+  margin: 1rem;
+  transition: 0.3s;
+  max-width: 18em;
+  visibility: visible;
+  z-index: 999; /*de popup staat nu voor de andere elementen*/
+  animation-name: nobigmama;
+  animation: nobigmama 3s infinite alternate;
+  transition: rotate 0.5;
+}
+
+@keyframes nobigmama{
+  25%{
+    transform: rotate(90deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  75%{
+    transform: rotate(270deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.bigmama {
+  display: block;
+}
+
+img {
+  display: none;
+}
+
+.smeagol {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+z-index: 2;
+transition: 1s 1s ease;
+}
+
+.smeagolshow {
+  display: block;
+  position: relative;
+  left: 2em;
+}
+
+a:nth-of-type(10) {
+  background-color: yellow;
+  color: black;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kaaseerst {
+  display: none;
+}
+
+.kaas1 {
+  font-size: 24px;
+  font-weight: bold;
+  animation: slideIn 1s ease-out; /* 1s is de duur van de animatie */
+  color: yellow;
+  font-size: 200px;
+}
